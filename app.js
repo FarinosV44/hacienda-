@@ -44,4 +44,5 @@ document.querySelector('#whatsapp-link').addEventListener('click',()=>track('lea
 document.querySelector('#email-link').addEventListener('click',()=>track('lead_email_opened'));
 document.querySelector('#restart').addEventListener('click',()=>{document.querySelector('#success').hidden=true;form.hidden=false;document.querySelector('.assessment-intro').hidden=false;showStep(4)});
 document.querySelectorAll('[data-track="phone"]').forEach(link=>link.addEventListener('click',()=>track('phone_clicked')));
+form.elements.fecha_recepcion.max=new Date().toISOString().slice(0,10);
 showStep(0);

@@ -4,11 +4,11 @@ Landing estática de captación para personas que han recibido notificaciones de
 
 ## Publicación
 
-El repositorio está preparado para GitHub Pages mediante el workflow incluido. Para integrarlo en la web principal, publicar `index.html`, `styles.css` y `app.js` bajo:
+Desplegado en GitHub Pages mediante el workflow incluido:
 
-`https://praetoriaabogados.es/abogado-hacienda-seguridad-social-valencia/`
+`https://farinosv44.github.io/hacienda-/`
 
-Antes de producción, verificar que la URL canónica coincide con la definitiva. El formulario no almacena datos ni sube documentos: genera localmente un mensaje que el usuario decide enviar por WhatsApp o correo.
+Esa es actualmente la URL real e indexable, por lo que `canonical`, `og:url` y el JSON-LD apuntan a ella. Si en el futuro este contenido se integra bajo `https://praetoriaabogados.es/abogado-hacienda-seguridad-social-valencia/`, hay que actualizar esas tres referencias a la URL definitiva (y considerar una redirección 301 desde la URL de GitHub Pages para no perder el posicionamiento acumulado). El formulario no almacena datos ni sube documentos: genera localmente un mensaje que el usuario decide enviar por WhatsApp o correo.
 
 ## Validación rápida
 
