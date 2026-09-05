@@ -80,21 +80,23 @@ necessary for this specifically.
 environment. Manual publication checklist, per article:
 
 1. Open the `.html` file and read the HTML comment at the top for the
-   proposed SEO title, slug, and meta description — do not paste that
-   comment block itself.
+   WordPress post title, slug, SEO title, and meta description — do not
+   paste that comment block itself.
 2. WordPress admin → **Posts → Add New**.
-3. Set the **title** to the article's `<h1>` text, and the **slug** to the
-   one proposed in the file's header comment.
+3. Set the **title** to the post title given in the header comment, and the
+   **slug** to the one given there too.
 4. Switch the block editor to **Code editor** mode (or add a **Custom
-   HTML** block) and paste everything from `<h1>` to the final closing
-   `</p>` — do not paste the leading HTML comment.
+   HTML** block) and paste everything starting from the first `<p>` to the
+   final closing element — do not paste the leading HTML comment, and do
+   not add an `<h1>`: WordPress renders the post title as the page's H1,
+   so a second one in the body would duplicate it.
 5. Set the **SEO title** and **meta description** in ThinkRank's panel to
    the values proposed in the file's header comment.
 6. Set the category (suggested: Blog > Fiscal / Hacienda).
-7. Preview and confirm: the internal link to
-   `/abogado-hacienda-y-seguridad-social-en-valencia/` works, headings
-   render as H1/H2/H3 (not paragraphs), and the FAQ questions display as
-   proper headings.
+7. Preview and confirm: the post title is the only H1 on the page, the
+   internal link to `/abogado-hacienda-y-seguridad-social-en-valencia/`
+   works and opens in the same tab, headings render as H2/H3 (not
+   paragraphs), and the FAQ questions display as proper headings.
 8. Publish.
 
 `content/editorial-plan.md` prioritises the remaining six articles with
