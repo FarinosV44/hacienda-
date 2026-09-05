@@ -1,15 +1,47 @@
 # PRAETORIA — Embudo Hacienda y Seguridad Social
 
-Landing estática de captación para personas que han recibido notificaciones de la AEAT, TGSS o INSS. Incluye diagnóstico guiado, resumen estructurado por WhatsApp/email, contenido SEO, datos estructurados y diseño responsive.
+Diagnóstico guiado en 5 pasos para personas que han recibido notificaciones de la AEAT, TGSS o INSS, con resumen estructurado por WhatsApp/email, contenido SEO, datos estructurados y diseño responsive. El formulario no almacena datos ni sube documentos: genera localmente un mensaje que el usuario decide enviar por WhatsApp o correo.
 
-## Publicación
+Este repositorio contiene dos cosas:
 
-Desplegado en GitHub Pages mediante el workflow incluido:
+## 1. Vista previa temporal (GitHub Pages)
+
+`index.html` / `app.js` / `styles.css` — desplegado automáticamente en:
 
 `https://farinosv44.github.io/hacienda-/`
 
-Esa es actualmente la URL real e indexable, por lo que `canonical`, `og:url` y el JSON-LD apuntan a ella. Si en el futuro este contenido se integra bajo `https://praetoriaabogados.es/abogado-hacienda-seguridad-social-valencia/`, hay que actualizar esas tres referencias a la URL definitiva (y considerar una redirección 301 desde la URL de GitHub Pages para no perder el posicionamiento acumulado). El formulario no almacena datos ni sube documentos: genera localmente un mensaje que el usuario decide enviar por WhatsApp o correo.
+Es solo una vista previa temporal, con una identidad visual propia (verde
+oscuro/dorado) que **no** coincide con la marca real de PRAETORIA. Una vez la
+página definitiva esté publicada en `praetoriaabogados.es` (ver más abajo),
+esta copia debe pasar a `noindex` y enlazar a la definitiva — instrucciones
+exactas en `content/github-pages-post-launch-patch.md`.
+
+## 2. Plugin de WordPress (integración definitiva)
+
+`wordpress-plugin/praetoria-hacienda-funnel/` — un plugin ligero y autónomo
+que expone el mismo embudo mediante el shortcode `[praetoria_hacienda_funnel]`,
+rediseñado para coincidir con la identidad real de PRAETORIA (sitio en
+WordPress + Astra + Elementor, rojo `#C10000`, tipografía Roboto, botones
+píldora) para publicarse como página nativa en:
+
+`https://praetoriaabogados.es/abogado-hacienda-seguridad-social-valencia/`
+
+Todo el CSS y JS del plugin está delimitado bajo `.phf-funnel` para no
+interferir con el tema ni con otros plugins. Ver **`INSTALL.md`** para el
+procedimiento completo de instalación, pruebas, SEO, enlaces internos y
+verificación, y `content/` para las piezas de contenido (metadatos SEO,
+artículos del clúster de contenido, plan de enlaces internos, instrucciones
+de menú).
 
 ## Validación rápida
 
-Abrir `index.html` en un servidor estático y recorrer las cuatro ramas del diagnóstico. El JavaScript no necesita compilación ni dependencias.
+- **Vista previa GitHub Pages:** abrir `index.html` en un servidor estático y
+  recorrer las cuatro ramas del diagnóstico.
+- **Plugin de WordPress:** abrir
+  `wordpress-plugin/praetoria-hacienda-funnel/tests/preview.html` (sirviendo
+  desde la carpeta del plugin para que las rutas relativas a `assets/`
+  funcionen) — es un espejo estático exacto de lo que devuelve el shortcode,
+  usado para probar el diseño y la lógica del embudo sin necesidad de una
+  instalación de WordPress.
+
+Ninguno de los dos necesita compilación ni dependencias.
