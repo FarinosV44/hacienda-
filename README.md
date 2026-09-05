@@ -4,27 +4,31 @@ Diagnóstico guiado en 5 pasos para personas que han recibido notificaciones de 
 
 Este repositorio contiene dos cosas:
 
-## 1. Vista previa temporal (GitHub Pages)
+## 1. Vista previa temporal (GitHub Pages) — retirada del índice
 
 `index.html` / `app.js` / `styles.css` — desplegado automáticamente en:
 
 `https://farinosv44.github.io/hacienda-/`
 
-Es solo una vista previa temporal, con una identidad visual propia (verde
-oscuro/dorado) que **no** coincide con la marca real de PRAETORIA. Una vez la
-página definitiva esté publicada en `praetoriaabogados.es` (ver más abajo),
-esta copia debe pasar a `noindex` y enlazar a la definitiva — instrucciones
-exactas en `content/github-pages-post-launch-patch.md`.
+Fue la vista previa temporal mientras no existía versión definitiva. Ahora que
+la página oficial está publicada y verificada en `praetoriaabogados.es`, esta
+copia está marcada `noindex,follow`, con el canonical apuntando a la URL
+definitiva y un aviso visible enlazando a ella, para no competir por
+posicionamiento con la página real. Se mantiene solo como referencia/demo
+técnica, no como contenido a indexar.
 
-## 2. Plugin de WordPress (integración definitiva)
+## 2. Plugin de WordPress (integración definitiva) — en producción
 
-`wordpress-plugin/praetoria-hacienda-funnel/` — un plugin ligero y autónomo
-que expone el mismo embudo mediante el shortcode `[praetoria_hacienda_funnel]`,
-rediseñado para coincidir con la identidad real de PRAETORIA (sitio en
-WordPress + Astra + Elementor, rojo `#C10000`, tipografía Roboto, botones
-píldora) para publicarse como página nativa en:
+`wordpress-plugin/praetoria-hacienda-funnel/` — plugin ligero y autónomo que
+expone el mismo embudo mediante el shortcode `[praetoria_hacienda_funnel]`,
+con la identidad real de PRAETORIA (sitio en WordPress + Astra + Elementor,
+rojo `#C10000`, tipografía Roboto, botones píldora). Publicado y verificado
+en producción en:
 
-`https://praetoriaabogados.es/abogado-hacienda-seguridad-social-valencia/`
+`https://praetoriaabogados.es/abogado-hacienda-y-seguridad-social-en-valencia/`
+
+El instalable versionado se publica como ZIP en
+[GitHub Releases](https://github.com/FarinosV44/hacienda-/releases).
 
 Todo el CSS y JS del plugin está delimitado bajo `.phf-funnel` para no
 interferir con el tema ni con otros plugins. Ver **`INSTALL.md`** para el

@@ -1,89 +1,52 @@
-# Deploying the funnel as a native PRAETORIA page
+# Deployment status — PRAETORIA Hacienda y Seguridad Social funnel
 
-This repo now contains two things:
+**Live in production.** The funnel is published and verified at:
 
-1. **`index.html` / `app.js` / `styles.css`** — the original static build, still
-   live at `https://farinosv44.github.io/hacienda-/`. This is a **temporary
-   preview only**. See `content/github-pages-post-launch-patch.md` for what
-   to do with it once step 2 below is live.
-2. **`wordpress-plugin/praetoria-hacienda-funnel/`** — a small, self-contained
-   WordPress plugin that renders the same funnel, redesigned to match the
-   real PRAETORIA identity (Astra + Elementor site, red `#C10000` CTAs,
-   Roboto typography, white/soft-blue sections), for publishing at
-   `https://praetoriaabogados.es/abogado-hacienda-seguridad-social-valencia/`.
+`https://praetoriaabogados.es/abogado-hacienda-y-seguridad-social-en-valencia/`
 
-The site was inspected live (WordPress 7.1, Astra 4.13.6, Elementor 4.2.3,
-Header Footer Elementor for the global header/footer, Complianz for cookie
-consent, Google Site Kit + Burst Statistics for analytics, ThinkRank as the
-SEO plugin, hosted on Hostinger). No WordPress admin or hosting credentials
-were available in this environment, so nothing has been installed on
-praetoriaabogados.es yet — this document is the exact procedure to finish
-the job once that access is available.
+- Returns HTTP 200.
+- The `praetoria-hacienda-funnel` WordPress plugin renders the funnel (see
+  `wordpress-plugin/praetoria-hacienda-funnel/` for source, and
+  [GitHub Releases](https://github.com/FarinosV44/hacienda-/releases) for the
+  installable ZIP).
+- SEO title, meta description, and canonical are correct and self-referencing.
+- Included in `https://praetoriaabogados.es/sitemap.xml`.
+- "Hacienda y Seguridad Social" is in the site's main navigation, under
+  "Ámbitos de Especialización".
 
-## 1. Backup first
+The GitHub Pages copy (`index.html` / `app.js` / `styles.css`, at
+`https://farinosv44.github.io/hacienda-/`) has been demoted accordingly —
+see `content/github-pages-post-launch-patch.md` for exactly what changed and
+why the order mattered. It is now `noindex,follow`, canonical to the real
+PRAETORIA URL, with a visible banner linking there, and no longer has its
+own sitemap.
 
-Before touching the live site:
-- If Hostinger's hPanel is reachable, take a manual backup (hPanel usually
-  keeps daily backups already — confirm a recent one exists) or use
-  **Plugins > Add New**, search for **UpdraftPlus** (or check if a backup
-  plugin is already installed) and run a manual backup of files + database.
-- This step is the rollback plan: if anything goes wrong, restore that
-  backup. No other rollback mechanism is needed for a change this small
-  (one new plugin, one new page, a handful of internal links).
+## If the plugin ever needs to be reinstalled or updated
 
-## 2. Install the plugin
+1. Download the latest ZIP from
+   [GitHub Releases](https://github.com/FarinosV44/hacienda-/releases).
+2. WordPress admin → **Plugins → Add New → Upload Plugin** → select the ZIP
+   → **Install Now**. If updating an existing install, deactivate and delete
+   the old version first (or let WordPress overwrite it).
+3. Activate. Nothing else needs to change — the shortcode
+   `[praetoria_hacienda_funnel]` and the page it lives on are untouched by a
+   plugin reinstall.
 
-1. Zip the `wordpress-plugin/praetoria-hacienda-funnel/` folder (the zip's
-   top level must be the `praetoria-hacienda-funnel` folder itself).
-2. WordPress admin → **Plugins → Add New → Upload Plugin** → select the zip
-   → **Install Now** → **Activate**.
-3. Nothing renders yet — the plugin only registers the
-   `[praetoria_hacienda_funnel]` shortcode and its scoped assets. It does
-   not touch any existing theme file, template, or other plugin.
+## Rollback
 
-## 3. Create the page
+Nothing in this plugin touches the database or the parent theme, so rollback
+is a single step: **Plugins → Deactivate → Delete** the
+"PRAETORIA - Hacienda y Seguridad Social Funnel" plugin. The page created for
+it can be unpublished separately if needed. No backup restore should be
+necessary for this specifically.
 
-1. **Pages → Add New**.
-2. Title: `Abogado Hacienda y Seguridad Social en Valencia`
-   (the visible on-page H1 is written by the shortcode itself and doesn't
-   have to match the WP page title exactly, but keeping them close helps
-   SEO).
-3. Set the **permalink/slug** to exactly:
-   `abogado-hacienda-seguridad-social-valencia`
-4. Choose the same page template the other service pages use so the global
-   header/footer render automatically — on this site that's the Elementor
-   "full width" / "canvas" template tied to the Header Footer Elementor
-   templates (visible as `page-template-elementor_header_footer` in the
-   other pages' body class). If building with Elementor, add an
-   **Elementor "Shortcode"** widget and paste `[praetoria_hacienda_funnel]`
-   into it. If using the block editor instead, add a **Shortcode block**
-   with the same content.
-5. Publish.
-
-## 4. SEO fields
-
-Open `content/seo-metadata.md` and paste the title, meta description, and
-(if desired) the `LegalService` schema block into ThinkRank's per-page SEO
-panel for this page. Confirm the canonical is self-referencing (it usually
-is by default for a new, non-duplicated page — just don't override it).
-
-## 5. Internal links and navigation
-
-- `content/nav-menu-instructions.md` — add "Hacienda y Seguridad Social" to
-  the "Ámbitos de Especialización" menu dropdown.
-- `content/internal-links.md` — the exact pages, insertion points, and
-  anchor text for links from the homepage, the existing Hacienda/SS blog
-  post, "Ámbitos de Especialización", "Derecho Mercantil", and the transport
-  article.
-
-## 6. Testing checklist (do this before calling it done)
+## Testing checklist (already completed once; reuse after any future change)
 
 - [ ] Page returns HTTP 200 at the final URL.
-- [ ] Desktop and mobile layouts look correct (compare against
-      `wordpress-plugin/praetoria-hacienda-funnel/tests/preview.html`, which
-      mirrors the shortcode's exact markup and was used to verify the
-      redesign in this repo with Playwright before any of this was written
-      to WordPress).
+- [ ] Desktop and mobile layouts match
+      `wordpress-plugin/praetoria-hacienda-funnel/tests/preview.html` (a
+      static mirror of the shortcode's exact markup, used to verify the
+      redesign with Playwright before anything was installed on WordPress).
 - [ ] All four branches (Hacienda/AEAT, Seguridad Social/TGSS, INSS, "No lo
       sé") complete the 5-step funnel and reach the success screen.
 - [ ] Required-field validation blocks progress on every step when a field
@@ -95,33 +58,45 @@ is by default for a new, non-duplicated page — just don't override it).
 - [ ] The privacy-policy consent link and legal disclaimer text are present
       and correct.
 - [ ] No JavaScript console errors on the page.
-- [ ] No visual conflicts with the rest of the theme (the plugin's CSS is
-      scoped under `.phf-funnel` specifically to prevent this — but verify
-      the header, footer, and cookie banner still look and behave exactly
-      as they do on every other page).
-- [ ] Existing pages (homepage, other service pages, the Hacienda/SS blog
-      post) still render correctly after adding the internal links.
-- [ ] Structured data (FAQPage + BreadcrumbList, both generated by the
-      shortcode) validates in Google's Rich Results Test.
+- [ ] No visual conflicts with the rest of the theme.
+- [ ] Structured data (FAQPage + BreadcrumbList) validates in Google's Rich
+      Results Test.
 
-## 7. Sitemap and Search Console
+## Internal links and menu
 
-Follow the "Sitemap" and "Google Search Console" sections in
-`content/seo-metadata.md`. Only request indexing after the page is
-confirmed live, self-canonical, and not `noindex`.
+- `content/nav-menu-instructions.md` — done (menu item added).
+- `content/internal-links.md` — remaining internal-link insertions (homepage,
+  existing Hacienda/SS blog post, "Ámbitos de Especialización", "Derecho
+  Mercantil", the transport article) to reinforce the page's SEO further.
 
-## 8. Demote the GitHub Pages preview
+## Content cluster
 
-Only after the steps above are confirmed working: follow
-`content/github-pages-post-launch-patch.md` to set the GitHub Pages copy to
-`noindex,follow`, point its canonical at the real PRAETORIA URL, and add a
-visible link to it. Commit and push that change to this same repository —
-it stays the source-controlled version of both the preview and the
-WordPress plugin.
+`content/wordpress-ready/` has two complete, WordPress-ready articles:
 
-## 9. Content cluster (optional, ongoing)
+- `hacienda-me-pide-justificar-ingresos.html`
+- `como-contestar-requerimiento-hacienda.html`
 
-`content/articles/` has two complete, ready-to-publish articles.
-`content/editorial-plan.md` prioritises the remaining six with target
-keywords and an outline for each, to be developed with the same care rather
-than published thin.
+**Not published yet** — no WordPress credentials are available in this
+environment. Manual publication checklist, per article:
+
+1. Open the `.html` file and read the HTML comment at the top for the
+   proposed SEO title, slug, and meta description — do not paste that
+   comment block itself.
+2. WordPress admin → **Posts → Add New**.
+3. Set the **title** to the article's `<h1>` text, and the **slug** to the
+   one proposed in the file's header comment.
+4. Switch the block editor to **Code editor** mode (or add a **Custom
+   HTML** block) and paste everything from `<h1>` to the final closing
+   `</p>` — do not paste the leading HTML comment.
+5. Set the **SEO title** and **meta description** in ThinkRank's panel to
+   the values proposed in the file's header comment.
+6. Set the category (suggested: Blog > Fiscal / Hacienda).
+7. Preview and confirm: the internal link to
+   `/abogado-hacienda-y-seguridad-social-en-valencia/` works, headings
+   render as H1/H2/H3 (not paragraphs), and the FAQ questions display as
+   proper headings.
+8. Publish.
+
+`content/editorial-plan.md` prioritises the remaining six articles with
+target keywords and an outline for each, to be developed with the same care
+rather than published thin.

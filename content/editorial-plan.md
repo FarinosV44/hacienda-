@@ -7,13 +7,20 @@ vez, sin poder revisarlos uno a uno contra hechos y plazos reales, arriesga
 contenido superficial o jurídicamente impreciso. Mejor publicar bien dos y
 tener el resto listo para desarrollarse al mismo nivel de cuidado.
 
-## Publicados (prioridad 1)
+## Listos para publicar (prioridad 1)
 
-1. **Hacienda me pide justificar ingresos: qué hacer** — `hacienda-me-pide-justificar-ingresos.html`
-2. **Cómo contestar un requerimiento de Hacienda** — `como-contestar-requerimiento-hacienda.html`
+1. **Hacienda me pide justificar ingresos: qué hacer** —
+   `content/wordpress-ready/hacienda-me-pide-justificar-ingresos.html`
+2. **Cómo contestar un requerimiento de Hacienda** —
+   `content/wordpress-ready/como-contestar-requerimiento-hacienda.html`
 
-Ambos enlazan a `/abogado-hacienda-seguridad-social-valencia/` y están escritos
-para poder pegarse directamente en el editor de WordPress.
+Ambos enlazan a `/abogado-hacienda-y-seguridad-social-en-valencia/` con texto
+ancla distinto en cada uno, incluyen FAQs, referencia de autor/despacho
+verificada, y están listos para pegarse directamente en el editor de bloques
+de WordPress. Cada archivo trae, en un comentario HTML al principio (que no
+debe pegarse), el título SEO, slug y meta description propuestos. **No se han
+publicado** — no hay credenciales de WordPress disponibles en este entorno;
+ver el checklist de publicación manual en `INSTALL.md`.
 
 ## Pendientes, en orden de prioridad
 
@@ -80,7 +87,7 @@ para poder pegarse directamente en el editor de WordPress.
 - Responder directamente a la intención de búsqueda del título.
 - No dar plazos ni porcentajes de éxito universales; remitir siempre a "el
   documento recibido" o "el expediente concreto".
-- Un enlace natural a `/abogado-hacienda-seguridad-social-valencia/` con texto
+- Un enlace natural a `/abogado-hacienda-y-seguridad-social-en-valencia/` con texto
   ancla distinto en cada artículo (ver `internal-links.md` para evitar
   repetir el mismo anchor).
 - Un CTA claro al final, sin urgencia artificial ni promesas de resultado.

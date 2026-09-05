@@ -1,4 +1,2 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://farinosv44.github.io/hacienda-/sitemap.xml

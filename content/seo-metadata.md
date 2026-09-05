@@ -1,7 +1,7 @@
 # SEO metadata for the final PRAETORIA page
 
 Target URL (the only canonical once live):
-`https://praetoriaabogados.es/abogado-hacienda-seguridad-social-valencia/`
+`https://praetoriaabogados.es/abogado-hacienda-y-seguridad-social-en-valencia/`
 
 This site's active SEO plugin is **ThinkRank** (confirmed via the
 `generator` meta tag and its own `breadcrumbs.css` on every page). Paste the
@@ -30,7 +30,7 @@ Social Valencia" without stuffing.
 ## Canonical URL
 Self-referencing:
 ```
-https://praetoriaabogados.es/abogado-hacienda-seguridad-social-valencia/
+https://praetoriaabogados.es/abogado-hacienda-y-seguridad-social-en-valencia/
 ```
 Most SEO plugins set this automatically for a normal (non-duplicated) page —
 just confirm in ThinkRank's page panel that it is NOT overridden to point
@@ -40,7 +40,7 @@ anywhere else.
 ```
 og:title: Abogado Hacienda y Seguridad Social en Valencia | PRAETORIA
 og:description: Revisamos la notificación, los plazos y las opciones para responder, alegar o recurrir.
-og:url: https://praetoriaabogados.es/abogado-hacienda-seguridad-social-valencia/
+og:url: https://praetoriaabogados.es/abogado-hacienda-y-seguridad-social-en-valencia/
 og:type: website
 og:image: https://praetoriaabogados.es/wp-content/uploads/2025/09/logo-praetoria-header.png
 ```
@@ -64,7 +64,7 @@ Elementor) placed once, near the top of the page:
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "PRAETORIA División Jurídica — Hacienda y Seguridad Social",
-  "url": "https://praetoriaabogados.es/abogado-hacienda-seguridad-social-valencia/",
+  "url": "https://praetoriaabogados.es/abogado-hacienda-y-seguridad-social-en-valencia/",
   "telephone": "+34607527719",
   "email": "juanfarinos@icav.es",
   "address": {
@@ -114,7 +114,7 @@ SEO plugin). After publishing the page:
 If GSC access is available for `praetoriaabogados.es`:
 1. Confirm the new URL appears in the submitted sitemap (Sitemaps report).
 2. Use **URL Inspection** on
-   `https://praetoriaabogados.es/abogado-hacienda-seguridad-social-valencia/`
+   `https://praetoriaabogados.es/abogado-hacienda-y-seguridad-social-en-valencia/`
    to confirm it returns "URL is on Google" or "Live URL is available" with
    no indexing blockers.
 3. Only request indexing after confirming the page returns HTTP 200, has the

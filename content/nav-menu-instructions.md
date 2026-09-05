@@ -13,7 +13,7 @@ cuál de las dos vías aplica.
    **"Ámbitos de Especialización"**.
 3. Añadir un nuevo elemento de submenú bajo él:
    - **Texto del enlace:** `Hacienda y Seguridad Social`
-   - **URL:** `https://praetoriaabogados.es/abogado-hacienda-seguridad-social-valencia/`
+   - **URL:** `https://praetoriaabogados.es/abogado-hacienda-y-seguridad-social-en-valencia/`
 4. Colocarlo junto a "Logística y transporte internacional" y "Arte y
    patrimonio" (mismo nivel, incluso orden alfabético o por relevancia).
 5. Guardar el menú.
@@ -46,5 +46,5 @@ web:
   debería afectar al comportamiento, pero conviene confirmarlo en un móvil
   real o en las herramientas de desarrollo).
 - Confirmar que el enlace apunta a la URL final
-  (`/abogado-hacienda-seguridad-social-valencia/`) y no a una URL de
+  (`/abogado-hacienda-y-seguridad-social-en-valencia/`) y no a una URL de
   borrador o distinta.

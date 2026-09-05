@@ -1,6 +1,6 @@
 # Enlaces internos a añadir hacia la landing de Hacienda y Seguridad Social
 
-Landing de destino: `https://praetoriaabogados.es/abogado-hacienda-seguridad-social-valencia/`
+Landing de destino: `https://praetoriaabogados.es/abogado-hacienda-y-seguridad-social-en-valencia/`
 
 Cada entrada indica la página existente, dónde insertar el enlace y qué texto
 ancla usar. Los anclas son distintos en cada sitio a propósito (evitar
@@ -20,7 +20,7 @@ como párrafo de cierre independiente.
 > Si te encuentras en esta situación, puedes hacer una primera revisión
 > guiada de tu notificación —AEAT, TGSS o INSS— y preparar un resumen para
 > enviarnos por WhatsApp sin subir documentación sensible a la web.
-> **[Revisar una notificación de Hacienda o Seguridad Social](https://praetoriaabogados.es/abogado-hacienda-seguridad-social-valencia/)**.
+> **[Revisar una notificación de Hacienda o Seguridad Social](https://praetoriaabogados.es/abogado-hacienda-y-seguridad-social-en-valencia/)**.
 
 **Anchor:** "Revisar una notificación de Hacienda o Seguridad Social"
 
@@ -42,7 +42,7 @@ de esa página usa tarjetas.
 > ### Hacienda y Seguridad Social
 > Defensa frente a requerimientos, liquidaciones, sanciones, apremios y
 > embargos de la Agencia Tributaria, la TGSS y el INSS.
-> **[Abogados para requerimientos de Hacienda](https://praetoriaabogados.es/abogado-hacienda-seguridad-social-valencia/)**
+> **[Abogados para requerimientos de Hacienda](https://praetoriaabogados.es/abogado-hacienda-y-seguridad-social-en-valencia/)**
 
 **Anchor:** "Abogados para requerimientos de Hacienda"
 
@@ -72,7 +72,7 @@ donde se mencionan conflictos societarios o responsabilidad de directivos.
 **Texto sugerido:**
 > Cuando la deuda de la empresa deriva en un procedimiento de responsabilidad
 > tributaria contra el administrador, también podemos ayudarte:
-> **[Alegaciones y recursos tributarios](https://praetoriaabogados.es/abogado-hacienda-seguridad-social-valencia/)**.
+> **[Alegaciones y recursos tributarios](https://praetoriaabogados.es/abogado-hacienda-y-seguridad-social-en-valencia/)**.
 
 **Anchor:** "Alegaciones y recursos tributarios"
 
